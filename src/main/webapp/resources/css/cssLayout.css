@@ -1,4 +1,5 @@
 
+
 #top {
     position: relative;
     background-color: #036fab;
@@ -52,10 +53,9 @@
   text-decoration: none;
 }
 
-#top a:link:hover, #top a:visited:hover  {
+#top a:link:hover, #top a:visited:hover {
   color: black;
   font-weight : bold;
   text-decoration : underline;
 }
-
 

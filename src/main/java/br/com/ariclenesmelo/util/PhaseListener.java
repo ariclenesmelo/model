@@ -11,8 +11,8 @@ public class PhaseListener implements javax.faces.event.PhaseListener{
         //Antes da Fase
     @Override
     public void beforePhase(PhaseEvent event) {
+        System.out.println("Antes da Fase: " + event.getPhaseId());
         if (event.getPhaseId().equals(PhaseId.RESTORE_VIEW)) {
-            System.out.println("Antes da Fase: " + getPhaseId());
             Session session = HibernateUtil.getSession_factory().openSession();
             session.beginTransaction();
             FacesContextUtil.setRequestSession(session);            
@@ -22,7 +22,7 @@ public class PhaseListener implements javax.faces.event.PhaseListener{
     //Depois da Fase
     @Override
     public void afterPhase(PhaseEvent event) {
-        System.out.println("Depois da Fase: " + getPhaseId());
+        System.out.println("Depois da Fase: " + event.getPhaseId());
         if(event.getPhaseId().equals(PhaseId.RENDER_RESPONSE)){
             Session session = FacesContextUtil.getRequestSession();
             try {

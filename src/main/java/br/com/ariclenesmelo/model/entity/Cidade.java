@@ -29,6 +29,7 @@ public class Cidade implements Serializable{
     @OneToMany()
     @ForeignKey (name="EnderecoCidade")
     private List<Endereco> enderecos;
+    
     public Cidade() {
     }
 

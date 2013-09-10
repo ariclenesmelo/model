@@ -8,11 +8,12 @@
         <phase-listener>br.com.ariclenesmelo.util.PhaseListener</phase-listener>
     </lifecycle>
     
-    <factory>
+ <!--   <factory>
         <exception-handler-factory>
             br.com.ariclenesmelo.exceptions.CustomExceptionHandlerFactory
         </exception-handler-factory>
     </factory>
+-->
 
 </faces-config>
 

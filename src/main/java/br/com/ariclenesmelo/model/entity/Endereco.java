@@ -43,12 +43,12 @@ public class Endereco implements Serializable{
     @ManyToOne(optional=false, fetch = FetchType.LAZY)
     @ForeignKey (name="EnderecoTipoLogradouro")
     @JoinColumn(name="IdTipoLogradouro", referencedColumnName = "IdTipoLogradouro")
-    private TipoLogradouro tipoLogradouro;
+    private TipoLogradouro tipologradouro;
     
     @ManyToOne(optional=false, fetch = FetchType.LAZY)
     @ForeignKey (name="EnderecoTipoEndereco")
     @JoinColumn(name="IdTipoEndereco", referencedColumnName = "IdTipoEndereco")
-    private TipoEndereco tipoEndereco;
+    private TipoEndereco tipoendereco;
     
     @ManyToOne(optional=false, fetch = FetchType.LAZY)
     @ForeignKey (name="EnderecoEstado")
@@ -62,8 +62,8 @@ public class Endereco implements Serializable{
 
     public Endereco() {
         this.cidade = new Cidade();
-        this.tipoEndereco = new TipoEndereco();
-        this.tipoLogradouro = new TipoLogradouro();
+        this.tipoendereco = new TipoEndereco();
+        this.tipologradouro = new TipoLogradouro();
         this.estado = new Estado();
         this.pessoa = new Pessoa();
     }
@@ -124,20 +124,20 @@ public class Endereco implements Serializable{
         this.pessoa = pessoa;
     }
 
-    public TipoLogradouro getTipoLogradouro() {
-        return tipoLogradouro;
+    public TipoLogradouro getTipologradouro() {
+        return tipologradouro;
     }
 
-    public void setTipoLogradouro(TipoLogradouro tipoLogradouro) {
-        this.tipoLogradouro = tipoLogradouro;
+    public void setTipologradouro(TipoLogradouro tipologradouro) {
+        this.tipologradouro = tipologradouro;
     }
 
-    public TipoEndereco getTipoEndereco() {
-        return tipoEndereco;
+    public TipoEndereco getTipoendereco() {
+        return tipoendereco;
     }
 
-    public void setTipoEndereco(TipoEndereco tipoEndereco) {
-        this.tipoEndereco = tipoEndereco;
+    public void setTipoendereco(TipoEndereco tipoendereco) {
+        this.tipoendereco = tipoendereco;
     }
 
     public Estado getEstado() {
@@ -156,6 +156,7 @@ public class Endereco implements Serializable{
         this.cidade = cidade;
     }
 
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -176,7 +177,6 @@ public class Endereco implements Serializable{
             return false;
         }
         return true;
-    }
-    
+    }    
     
 }
